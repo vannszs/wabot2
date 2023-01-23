@@ -217,6 +217,9 @@ messageId: ""
 let kafloc = {key : {participant : '0@s.whatsapp.net', ...(rixxbotwhatsapp.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: `𝙫𝙖𝙣𝙣 : ${runtime(process.uptime())}`,jpegThumbnail: fs.readFileSync('./image/thumbnail.jpg')}}}
 switch (command) {
 case '/admin':{
+if (!isGroup) throw `Gak bisa disini`
+if (!isBotAdmins) throw `Jadiin gw admin dong biar bisa`
+if (!isAdmins) throw `luh siape`
 rixx.sendMessage(rixxbotwhatsapp.chat, {text: `┏━━⊱ 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 
 ┣❏ ᴏᴡɴᴇʀ : 6285381568989
 ┣❏ ɴᴀᴍᴇ ʙᴏᴛ : Ai
